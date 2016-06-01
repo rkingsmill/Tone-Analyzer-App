@@ -12,7 +12,6 @@
 
 @property (weak, nonatomic) NSString* name;
 @property (nonatomic) int value;
-//@property (weak, nonatomic) UIColor* color;
 
 -(UIColor*)color;
 

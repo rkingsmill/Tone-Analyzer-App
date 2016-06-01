@@ -11,7 +11,7 @@
 
 @implementation DataFetcher
 
--(DataFetcher*)returnData:(NSString*)text {
+-(void)fetchData:(NSString *)text onComplete:(void (^)(DataFetcher *))complete {
     
     NSString* base64Login = [NSString stringWithFormat:@"0eac7dd8-2216-424c-8d67-7922fa5e8ce1:ih1C4sryNgCV"];
     
@@ -28,9 +28,7 @@
     
     NSString *urlString = @"https://gateway.watsonplatform.net/tone-analyzer/api/v3/tone?version=2016-05-19";
     
-    NSDictionary *myDictionary = [[NSDictionary alloc]initWithObjectsAndKeys:
-                                  content, @"text",
-                                  nil];
+    NSDictionary *myDictionary = @{@"text": content};
     
     [manager POST:urlString parameters:myDictionary progress:nil success:^(NSURLSessionDataTask * _Nonnull task,NSDictionary *responseObject) {
         NSLog(@"JSON: %@", responseObject);
@@ -41,10 +39,11 @@
         NSDictionary *dict3 = array[2];
         
         NSArray *arrayOfTones = dict1[@"tones"];
-        NSArray *arrayOfTones2 = dict2[@"tones"];
+       //NSArray *arrayOfTones2 = dict2[@"tones"];
         NSArray *arrayofTones3 = dict3[@"tones"];
         
         self.emotions = [[NSMutableArray alloc] init];
+        self.socialTendency = [[NSMutableArray alloc]init];
         
         for (NSDictionary *toneDict in arrayOfTones) {
             Tone *tone = [Tone new];
@@ -53,23 +52,25 @@
             
             tone.value = [DataFetcher convertToPercent:decimalString];
             
-            NSDictionary *emotionDict = [NSDictionary dictionaryWithObjectsAndKeys:tone.name, @"name", tone.value, @"value", tone.color, @"color", nil];
+             NSLog (@"%@, %@ %d%%", tone.name, tone.color, tone.value);
+            
+            NSDictionary *emotionDict = @{@"name": tone.name,
+                                          @"value": @(tone.value),
+                                          @"color": tone.color};
             
             [self.emotions addObject:emotionDict];
-          
-            NSLog (@"%@, %d%%", tone.name, tone.value);
         }
         
-        for (NSDictionary *toneDict2 in arrayOfTones2) {
-            NSString *name = toneDict2[@"tone_name"];
-            NSString *decimalString = toneDict2[@"score"];
-            
-            int percent = [DataFetcher convertToPercent:decimalString];
-            
-            //get data for cocoa pod
-            
-            NSLog (@"%@, %d%%", name, percent);
-        }
+//        for (NSDictionary *toneDict2 in arrayOfTones2) {
+//            NSString *name = toneDict2[@"tone_name"];
+//            NSString *decimalString = toneDict2[@"score"];
+//            
+//            int percent = [DataFetcher convertToPercent:decimalString];
+//            
+//            //get data for cocoa pod
+//            
+//            NSLog (@"%@, %d%%", name, percent);
+//        }
         
         for (NSDictionary *toneDict3 in arrayofTones3) {
             Tone *tone = [Tone new];
@@ -78,22 +79,23 @@
             
             tone.value = [DataFetcher convertToPercent:decimalString];
             
-            NSDictionary *socialDict = [NSDictionary dictionaryWithObjectsAndKeys:tone.name, @"name", tone.value, @"value", tone.color, @"color", nil];
+            NSLog (@"%@, %@ %d%%", tone.name, tone.color, tone.value);
+            
+            NSDictionary *socialDict = @{@"name": tone.name,
+                                         @"value": @(tone.value),
+                                         @"color": tone.color};
             
             [self.socialTendency addObject:socialDict];
-            
-            NSLog(@"%@ %d%%", tone.name, tone.value);
         }
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            
+            complete(self);
         });
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"Error: %@", error);
     }];
     
-    return self;
 }
 
 +(int)convertToPercent:(NSString*)decimalString {

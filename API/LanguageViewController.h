@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Data.h"
 
 @interface LanguageViewController : UIViewController
 
-
+@property (nonatomic, strong) Data* data;
 
 @end

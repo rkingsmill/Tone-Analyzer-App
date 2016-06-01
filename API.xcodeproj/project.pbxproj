@@ -17,7 +17,6 @@
 		5B3C15A61CFC9A02004018FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B3C15A41CFC9A02004018FB /* LaunchScreen.storyboard */; };
 		5B3C15AF1CFDDD78004018FB /* DataFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B3C15AE1CFDDD78004018FB /* DataFetcher.m */; };
 		5B3C15B21CFDDF8C004018FB /* TextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B3C15B11CFDDF8C004018FB /* TextViewController.m */; };
-		5B3C15B51CFDE038004018FB /* GraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B3C15B41CFDE038004018FB /* GraphViewController.m */; };
 		5B3C15B81CFDEC18004018FB /* Data.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B3C15B71CFDEC18004018FB /* Data.m */; };
 		5BA14A7D1CFE1F3E0049C6BA /* Tone.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BA14A7C1CFE1F3E0049C6BA /* Tone.m */; };
 		CC8AC01C3B0954FC8BC159A0 /* libPods-API.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B9B87AF279D14AE8871E15D /* libPods-API.a */; };
@@ -42,8 +41,6 @@
 		5B3C15AE1CFDDD78004018FB /* DataFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataFetcher.m; sourceTree = "<group>"; };
 		5B3C15B01CFDDF8C004018FB /* TextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextViewController.h; sourceTree = "<group>"; };
 		5B3C15B11CFDDF8C004018FB /* TextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewController.m; sourceTree = "<group>"; };
-		5B3C15B31CFDE038004018FB /* GraphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphViewController.h; sourceTree = "<group>"; };
-		5B3C15B41CFDE038004018FB /* GraphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphViewController.m; sourceTree = "<group>"; };
 		5B3C15B61CFDEC18004018FB /* Data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Data.h; sourceTree = "<group>"; };
 		5B3C15B71CFDEC18004018FB /* Data.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Data.m; sourceTree = "<group>"; };
 		5BA14A7B1CFE1F3E0049C6BA /* Tone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tone.h; sourceTree = "<group>"; };
@@ -90,8 +87,6 @@
 				5B3C159A1CFC9A02004018FB /* AppDelegate.m */,
 				5B3C15B01CFDDF8C004018FB /* TextViewController.h */,
 				5B3C15B11CFDDF8C004018FB /* TextViewController.m */,
-				5B3C15B31CFDE038004018FB /* GraphViewController.h */,
-				5B3C15B41CFDE038004018FB /* GraphViewController.m */,
 				0E744B4D1CFE639F007642EC /* EmotionViewController.h */,
 				0E744B4E1CFE639F007642EC /* EmotionViewController.m */,
 				0E744B501CFF0F1A007642EC /* LanguageViewController.h */,
@@ -262,7 +257,6 @@
 				5B3C159B1CFC9A02004018FB /* AppDelegate.m in Sources */,
 				5B3C15981CFC9A02004018FB /* main.m in Sources */,
 				5B3C15AF1CFDDD78004018FB /* DataFetcher.m in Sources */,
-				5B3C15B51CFDE038004018FB /* GraphViewController.m in Sources */,
 				0E744B4F1CFE639F007642EC /* EmotionViewController.m in Sources */,
 				5BA14A7D1CFE1F3E0049C6BA /* Tone.m in Sources */,
 				5B3C15B21CFDDF8C004018FB /* TextViewController.m in Sources */,

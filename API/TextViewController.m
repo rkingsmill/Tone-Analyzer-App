@@ -8,7 +8,9 @@
 
 #import "TextViewController.h"
 #import "Data.h"
-#import "GraphViewController.h"
+#import "EmotionViewController.h"
+#import "LanguageViewController.h"
+#import "SocialViewController.h"
 
 @interface TextViewController ()
 
@@ -29,14 +31,12 @@
 //@property (nonatomic, weak) UIBarButtonItem *barButton;
 @property (nonatomic, strong) Data *data;
 
-
 @end
 
 @implementation TextViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     
     self.headerLabel.textColor = [UIColor colorWithRed:0.373 green:0.745 blue:0.843 alpha:1.0];
     
@@ -58,11 +58,7 @@
     self.framingView.layer.borderWidth = .0;
     self.framingView.layer.cornerRadius = 5.0;
     self.framingView.backgroundColor = [UIColor colorWithRed:0.961 green:0.961 blue:0.961 alpha:1.0];
-    
-
-    
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -74,18 +70,29 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 
-- (IBAction)analyzeText:(id)sender {
+- (IBAction)analyze:(id)sender {
     self.data = [[Data alloc] init];
     self.data.content = self.textView.text;
-//    self.data.content = localData.content;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
-    if ([[segue identifier] isEqualToString:@"showGraph"]) {
+    if ([[segue identifier] isEqualToString:@"ShowEmotion"]) {
         
-         GraphViewController *gvc = (GraphViewController *)[segue destinationViewController];
-         gvc.data = self.data;
+        EmotionViewController *evc = (EmotionViewController *)[segue destinationViewController];
+        evc.data = self.data;
+    }
+    
+    if ([[segue identifier] isEqualToString:@"ShowSocial"]) {
+        
+        SocialViewController *svc = (SocialViewController *)[segue destinationViewController];
+        svc.data = self.data;
+    }
+    
+    if ([[segue identifier] isEqualToString:@"ShowLanguage"]) {
+        
+        LanguageViewController *lvc = (LanguageViewController *)[segue destinationViewController];
+        lvc.data = self.data;
     }
 }
 

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "TextViewController.h"
+#import "Data.h"
 
 @interface EmotionViewController : UIViewController
 
@@ -15,5 +16,7 @@
 @property (strong, nonatomic) IBOutlet UITextView *emotionSummaryView;
 @property (strong, nonatomic) NSObject *emotion;
 @property (strong, nonatomic) IBOutlet UIView *emotionGraphView;
+@property (nonatomic, strong) Data* data;
+@property (weak, nonatomic) NSString* text;
 
 @end

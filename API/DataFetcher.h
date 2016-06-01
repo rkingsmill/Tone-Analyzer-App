@@ -15,7 +15,7 @@
 @property (nonatomic, strong) NSMutableArray *languageStyle;
 @property (nonatomic, strong) NSMutableArray *socialTendency;
 
--(DataFetcher*)returnData:(NSString*)text;
+-(void)fetchData:(NSString*)text onComplete:(void(^)(DataFetcher *fetcher))complete;
 +(int)convertToPercent:(NSString*)decimalString;
 
 

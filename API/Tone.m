@@ -36,7 +36,7 @@
         return [UIColor redColor];
     }
     
-    if ([self.name  isEqual: @"Concientiousness"]) {
+    if ([self.name  isEqual: @"Conscientiousness"]) {
         return [UIColor greenColor];
     }
     

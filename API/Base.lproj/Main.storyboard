@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="khA-hg-5AT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="khA-hg-5AT">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -61,7 +61,7 @@
                                     </mask>
                                 </variation>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uwn-F6-eA3">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uwn-F6-eA3">
                                 <rect key="frame" x="250" y="537" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="6Cr-bU-Beh"/>
@@ -83,6 +83,9 @@
                                         <exclude reference="kek-PY-FZL"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="analyze:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YE3-LX-uvk"/>
+                                </connections>
                             </button>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HjV-de-GQt">
                                 <rect key="frame" x="20" y="540" width="600" height="60"/>
@@ -186,25 +189,11 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pHc-oI-s5O">
                                 <rect key="frame" x="0.0" y="64" width="600" height="492"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Su-7z-KYC">
-                                        <rect key="frame" x="40" y="40" width="520" height="200"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="200" id="c91-fD-nb5"/>
-                                            <constraint firstAttribute="height" constant="200" id="oCv-ze-A6W"/>
-                                        </constraints>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="c91-fD-nb5"/>
-                                                <exclude reference="oCv-ze-A6W"/>
-                                            </mask>
-                                        </variation>
-                                    </view>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eMM-Pd-EJg">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eMM-Pd-EJg">
                                         <rect key="frame" x="40" y="290" width="520" height="300"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="130" id="7Gh-et-Dfa"/>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="300" id="Jj8-N4-uuh"/>
                                         </constraints>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -215,17 +204,30 @@
                                             </mask>
                                         </variation>
                                     </textView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Su-7z-KYC" userLabel="Graph View">
+                                        <rect key="frame" x="40" y="40" width="520" height="200"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="c91-fD-nb5"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="c91-fD-nb5"/>
+                                            </mask>
+                                        </variation>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="7Su-7z-KYC" secondAttribute="trailing" constant="40" id="5DE-Th-FLx"/>
+                                    <constraint firstAttribute="bottom" secondItem="7Su-7z-KYC" secondAttribute="bottom" constant="252" id="72y-NJ-j2q"/>
                                     <constraint firstAttribute="trailing" secondItem="eMM-Pd-EJg" secondAttribute="trailing" constant="40" id="8dL-qq-UNn"/>
                                     <constraint firstItem="eMM-Pd-EJg" firstAttribute="top" secondItem="7Su-7z-KYC" secondAttribute="bottom" constant="50" id="Dar-5n-bHM"/>
-                                    <constraint firstAttribute="bottom" secondItem="eMM-Pd-EJg" secondAttribute="bottom" constant="50" id="Eux-Sm-8DI"/>
                                     <constraint firstItem="7Su-7z-KYC" firstAttribute="leading" secondItem="pHc-oI-s5O" secondAttribute="leading" constant="40" id="N9X-Tn-fny"/>
                                     <constraint firstItem="eMM-Pd-EJg" firstAttribute="leading" secondItem="pHc-oI-s5O" secondAttribute="leading" constant="40" id="Xxc-pa-Nrj"/>
+                                    <constraint firstAttribute="bottom" secondItem="eMM-Pd-EJg" secondAttribute="bottom" constant="-98" id="YwB-ER-67n"/>
                                     <constraint firstItem="7Su-7z-KYC" firstAttribute="top" secondItem="pHc-oI-s5O" secondAttribute="top" constant="40" id="gTe-DE-Wh6"/>
                                     <constraint firstAttribute="bottom" secondItem="eMM-Pd-EJg" secondAttribute="bottom" constant="50" id="h9B-KL-4OU"/>
+                                    <constraint firstItem="eMM-Pd-EJg" firstAttribute="top" secondItem="7Su-7z-KYC" secondAttribute="bottom" constant="50" id="zhR-pD-LaD"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -252,6 +254,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="emotionGraphView" destination="7Su-7z-KYC" id="DHJ-k7-1G3"/>
                         <outlet property="emotionSummaryView" destination="eMM-Pd-EJg" id="CWD-u2-YWb"/>
                         <outlet property="emotionView" destination="pHc-oI-s5O" id="5aV-EA-l8M"/>
                     </connections>
@@ -276,31 +279,43 @@
                                 <rect key="frame" x="0.0" y="64" width="600" height="492"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ofa-Mz-8a9">
-                                        <rect key="frame" x="40" y="50" width="520" height="200"/>
+                                        <rect key="frame" x="40" y="262" width="520" height="200"/>
+                                        <subviews>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="HbU-Gr-s3w">
+                                                <rect key="frame" x="40" y="-150" width="440" height="300"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="300" id="vFV-wC-gGr"/>
+                                                </constraints>
+                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="200" id="Edl-BO-ais"/>
+                                            <constraint firstAttribute="trailing" secondItem="HbU-Gr-s3w" secondAttribute="trailing" constant="40" id="Gmm-LV-LcS"/>
+                                            <constraint firstItem="HbU-Gr-s3w" firstAttribute="leading" secondItem="Ofa-Mz-8a9" secondAttribute="leading" constant="40" id="fVP-d5-G2D"/>
+                                            <constraint firstAttribute="bottom" secondItem="HbU-Gr-s3w" secondAttribute="bottom" constant="50" id="pI9-3V-VZj"/>
                                         </constraints>
                                     </view>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="HbU-Gr-s3w">
-                                        <rect key="frame" x="40" y="142" width="520" height="300"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4lI-hq-2NK" userLabel="Graph View">
+                                        <rect key="frame" x="40" y="40" width="520" height="200"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="300" id="vFV-wC-gGr"/>
+                                            <constraint firstAttribute="height" constant="200" id="ZCh-Lg-aaK"/>
                                         </constraints>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="HbU-Gr-s3w" secondAttribute="bottom" constant="50" id="40D-Tm-Z7Z"/>
+                                    <constraint firstItem="4lI-hq-2NK" firstAttribute="top" secondItem="wTP-Fh-sOs" secondAttribute="top" constant="40" id="0BO-hk-24t"/>
                                     <constraint firstAttribute="trailing" secondItem="Ofa-Mz-8a9" secondAttribute="trailing" constant="40" id="GYE-ju-Stq"/>
-                                    <constraint firstItem="Ofa-Mz-8a9" firstAttribute="top" secondItem="wTP-Fh-sOs" secondAttribute="top" constant="50" id="QKu-c6-VdN"/>
-                                    <constraint firstAttribute="trailing" secondItem="HbU-Gr-s3w" secondAttribute="trailing" constant="40" id="hDd-qn-S1n"/>
+                                    <constraint firstItem="Ofa-Mz-8a9" firstAttribute="top" secondItem="4lI-hq-2NK" secondAttribute="bottom" constant="22" id="KUq-ja-enm"/>
+                                    <constraint firstItem="Ofa-Mz-8a9" firstAttribute="bottom" secondItem="wTP-Fh-sOs" secondAttribute="bottom" constant="-30" id="QKu-c6-VdN"/>
+                                    <constraint firstAttribute="trailing" secondItem="4lI-hq-2NK" secondAttribute="trailing" constant="40" id="e6M-Xp-tj7"/>
                                     <constraint firstItem="Ofa-Mz-8a9" firstAttribute="leading" secondItem="wTP-Fh-sOs" secondAttribute="leading" constant="40" id="qZR-gs-568"/>
-                                    <constraint firstItem="HbU-Gr-s3w" firstAttribute="leading" secondItem="wTP-Fh-sOs" secondAttribute="leading" constant="40" id="x8W-WV-eWC"/>
+                                    <constraint firstItem="4lI-hq-2NK" firstAttribute="leading" secondItem="wTP-Fh-sOs" secondAttribute="leading" constant="40" id="xjj-Hd-FOn"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -313,6 +328,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="graphView" destination="4lI-hq-2NK" id="vnW-12-cq8"/>
                         <outlet property="socialSummaryView" destination="HbU-Gr-s3w" id="PCq-O4-Fdh"/>
                         <outlet property="socialView" destination="wTP-Fh-sOs" id="RXr-UC-Zls"/>
                     </connections>
