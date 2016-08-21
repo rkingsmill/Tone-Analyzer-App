@@ -11,8 +11,11 @@
 @interface Tone : NSObject
 
 @property (weak, nonatomic) NSString* name;
-@property (nonatomic) int value;
+@property (nonatomic) NSNumber *score;
+//@property UIColor *color;
 
--(UIColor*)color;
+- (instancetype)initWithName:(NSString *)name
+                       score:(NSNumber *)score;
+- (UIColor*)color;
 
 @end

@@ -7,16 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Tone.h"
+
+@class DocumentTone;
 
 @interface DataFetcher : NSObject
 
-@property (nonatomic, strong) NSMutableArray *emotions;
-@property (nonatomic, strong) NSMutableArray *languageStyle;
-@property (nonatomic, strong) NSMutableArray *socialTendency;
+@property (nonatomic, strong) NSMutableArray *sentencesTones;
+@property (nonatomic, strong) DocumentTone *dt;
 
--(void)fetchData:(NSString*)text onComplete:(void(^)(DataFetcher *fetcher))complete;
-+(int)convertToPercent:(NSString*)decimalString;
-
+-(void)fetchData:(NSString *)text
+      completion:(void(^)(DataFetcher *fetcher))completion;
 
 @end
